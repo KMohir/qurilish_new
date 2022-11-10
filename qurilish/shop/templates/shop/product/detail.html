@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="product-detail">
+  <img src="{% if product.image %}{{ product.image.url }}{% else %}
+  {% static 'img/no_image.png' %}{% endif %}" alt="product image">
+  <p>Maxsulot nomi</p>
+  <h1>{{ product.name }}</h1>
+  <p>Kompaniya nomi:</p>
+  <h2> {{product.company_name }}</h2>
+
+    <p>Kompaniya telefon raqami</p>
+  <h2>{{ product.number_company }}</h2>
+  <p class="price"> {{ product.price }} so'm</p>
+</div>
+{% endblock %}
